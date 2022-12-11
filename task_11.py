@@ -4,6 +4,8 @@ class Dessert:
 		self.calories=y
 	def __get__(self,x):
 		return self.__x
+	def __set__(self,x):
+		self.x=x
 	def is_healthy(self):
 		try:
 			if self.calories<200:
