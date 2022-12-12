@@ -10,7 +10,7 @@ def count_words(x):
 			if c != '':
 				a.append(c.lower())
 			c=''
-	a.append(c)
+	a.append(c.lower())
 	for i in a:
 		c=a.count(i)
 		if i not in b:
