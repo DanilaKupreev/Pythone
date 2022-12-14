@@ -2,7 +2,7 @@ class Dessert:
 	def __init__(self, x=None, y=None):
 		self.name=x
 		self.calories=y
-	
+		
 	def __get__(self,x):
 		return self.__x
 	
@@ -17,27 +17,25 @@ class Dessert:
 				return False
 		except:
 			return False
-
+	
 	def is_delicious(self):
-		if JellyBean.flavor()==False:
+		if JellyBean.alt != "black licorice":
+			if self.name != None:
+				return True
+		else:
 			return False
-		if self.name != None:
-			return True
 
 class JellyBean(Dessert):
 	alt=""
-	def __init__(self, name=None):
-		self.name=name
-		JellyBean.alt=name
-	
-	def __get__(self,x):
-		return self.__x
-	
-	def __set__(self,x):
-		self.x=x
-		print("dxfgv")
-	
-	@staticmethod
-	def flavor():
-		if JellyBean.alt=="black licorice":
-			return False
+	def __init__(self, x=None):
+		self.name=x
+	@property
+	def flavor(self):
+		self.name
+	@flavor.setter
+	def flavor(self,x):
+		JellyBean.alt=x
+		self.name=x
+	@flavor.getter
+	def flavor(self):
+		return self.name
