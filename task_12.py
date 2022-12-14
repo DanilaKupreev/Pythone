@@ -20,8 +20,7 @@ class Dessert:
 	
 	def is_delicious(self):
 		if JellyBean.alt != "black licorice":
-			if self.name != None:
-				return True
+			return True
 		else:
 			return False
 
