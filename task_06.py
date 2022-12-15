@@ -1,4 +1,6 @@
-class MyError(Exception):
+class WrongNumberOfPlayersError(Exception):
+	pass
+class NoSuchStrategyError(Exception):
 	pass
 
 def rps_game_winner(x):
@@ -29,6 +31,6 @@ def rps_game_winner(x):
 					a=x[1][0]+' '+x[1][1]
 			return a
 		else:
-			raise MyError("NoSuchStrategyError")
+			raise NoSuchStrategyError()
 	if len(x)!=2:
-		raise MyError("WrongNumberOfPlayersError")
+		raise WrongNumberOfPlayersError()
