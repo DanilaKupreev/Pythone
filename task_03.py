@@ -1,15 +1,13 @@
 def max_odd(x):
-    c=0
-    a=1
+    lower = 0
+
     for i in x:
         try:
-            if int(i) % 2 == 1:
-                if i>c:
-                    c=i
+            if int(i)%2==1 and i>lower:
+                lower = i
         except:
-            a+=1
-    if c == 0:
-        c=None
-    return c
-
-print(max_odd(['ololo',21,23.001,3,'fufufu']))
+            pass
+    
+    if lower != 0: 
+        return int(lower)
+    
