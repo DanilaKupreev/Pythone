@@ -1,12 +1,14 @@
 def is_palindrome(x):
-    y=[",","'",".","/","<",">","?",";",":","[","]","{","}","-","_","+","=",")","(","*","&","^","%","$","#","@","!","`","~","№"," "]
+    en='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+    ru='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+    number='1234567890'
     a=[]
-    x=str(x)
-    for i in x:
-        if i not in y:
-            a.append(i.lower())
-    if a[0:]==a[::-1]:
-        c=True
-    else:
-        c=False
-    return c
+    
+    for simvol in x:
+        if simvol in en or simvol in ru or simvol in number:
+            a.append(simvol.lower())
+    
+    if a[0:] == a[::-1]:
+        return True
+
+    return False
